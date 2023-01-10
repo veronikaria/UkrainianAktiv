@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    ViewBag.Title = "Контакти";
+    Layout = "_Layout";
+}
+
+<section id="contact-info">
+    <div class="center">
+        <h2>Як нас знайти?</h2>
+        <p class="lead">Ми онлайн школа для підготовки до ЗНО. А також орендуємо приміщення у ТЦ Глинки (м. Дніпро)</p>
+    </div>
+    <div class="gmap-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 text-center">
+                    @Html.Partial("_Map")
+                </div>
+
+                <div class="col-sm-7 map-content">
+                    <ul class="row">
+                        <li class="col-sm-12 ">
+                            <address id="map-address">
+                                <p>Контакти</p>
+                                <p>
+                                    Телефон: <a href="tel:+380951859892">+380(95)185-98-92</a><br>
+                                    Email: <a href="mailto:ukrainianaktiv@gmail.com">ukrainianaktiv@gmail.com</a>
+                                </p>
+                                <p>
+                                    Ви можете зв'язатись з нами<br/>
+                                    <a href="https://telegram.me/maths_progs"><i class="fa fa-telegram" aria-hidden="true"></i>TELEGRAM</a>
+                                    або <a href="viber://chat/?number=%2B380951859892"><i class="fab fa-viber"></i>VIBER</a>
+                                </p>
+                            </address>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@Html.Partial("_BottomLinks")

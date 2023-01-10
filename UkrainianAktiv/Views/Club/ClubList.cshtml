@@ -1,0 +1,25 @@
+﻿@using System.Collections.Generic
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using UkrainianAktiv.ViewModels
+@model IEnumerable<ClubDto>
+
+@{
+    ViewBag.Title = "Клуби ЗНО";
+    Layout = "_Layout";
+}
+
+<section class="pricing-page">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>Клуби ЗНО з української мови</h2>
+            <p class="lead">При відвідуванні курсів довідник ЗНО з української мови безкоштовно!</p>
+        </div>
+        <div class="text-center">
+            @foreach (var club in @Model)
+            {
+                @Html.Partial("ClubDetails", club)
+            }
+        </div>
+    </div>
+</section>
+@Html.Partial("_BottomLinks")

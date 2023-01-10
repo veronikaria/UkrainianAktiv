@@ -1,0 +1,109 @@
+﻿@using System.Collections.Generic
+@using UkrainianAktiv.ViewModels
+@model IEnumerable<ClubDto>
+
+@{
+    ViewBag.Title = "Головна";
+    Layout = "_Layout";
+}
+
+<section id="slideshow">
+  <div class="slideshow-container">
+
+    <div class="mySlides slider-fade">
+      <div class="slider-numbertext">1 / 3</div>
+      <img class="slider-image" src="img/slider/slider_3.jpg" style="width:100%;">
+      <div class="slider-text">Підготовка до ЗНО<br /><br /><br />з української мови та літератури</div>
+    </div>
+
+    <div class="mySlides slider-fade">
+      <div class="slider-numbertext">2 / 3</div>
+      <img class="slider-image" src="~/img/slider/slider_1.jpg" style="width:100%">
+      <div class="slider-text">Підготовка до ЗНО <br /><br /><br />з української мови та літератури</div>
+    </div>
+
+    <div class="mySlides slider-fade">
+      <div class="slider-numbertext">3 / 3</div>
+      <img class="slider-image" src="img/slider/slider_5.jpg" style="width:100%">
+      @*<div class="slider-text">Caption Three</div>*@
+    </div>
+
+    <a class="slider-prev" onclick="plusSlides(-1)">❮</a>
+    <a class="slider-next" onclick="plusSlides(1)">❯</a>
+
+  </div>
+    <br>
+
+  <div style="text-align:center">
+      <span class="slider-dot" onclick="currentSlide(1)"></span> 
+      <span class="slider-dot" onclick="currentSlide(2)"></span> 
+      <span class="slider-dot" onclick="currentSlide(3)"></span> 
+  </div>
+</section>
+
+
+<section id="feature" >
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>Відгуки</h2>
+            <p class="lead">Студенти Ukrainian Aktiv завжди раді поділитись <br/> своїми враженнями від наших уроків!</p>
+        </div>
+
+        <div class="row feature-wrap wow fadeInDown">
+            <div class="col-sm-6 media testimonial-inner">
+                <div class="pull-left pupil">
+                    <img class="media_image" src="img/response1.jpg"/>
+                </div>
+                <div class="media-body response">
+                    <h3>Прекрасна школа! Багато потрібних тем і зустрічей, які допомагають підготуватись до ЗНО!</h3>
+                </div>
+            </div>
+            <div class="col-sm-6 media testimonial-inner">
+                <div class="pull-left pupil">
+                    <img class="media_image" src="img/response2.jpg"/>
+                </div>
+                <div class="media-body response">
+                    <h3>Найголовніше - позитивно та різносторонньо! Активна підготовка до ЗНО. Наразі це рідкість!</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row wow fadeInDown">
+            <div class="col-sm-6 media testimonial-inner">
+                <div class="pull-left pupil">
+                    <img class="media_image" src="img/response3.jpg"/>
+                </div>
+                <div class="media-body response">
+                    <h3>Прекрасна атмосфера! Чудова можливість потренуватись та покращити граматику.</h3>
+                </div>
+            </div>
+            <div class="col-sm-6 media testimonial-inner">
+                <div class="pull-left pupil">
+                    <img class="media_image" src="img/response4.jpg"/>
+                </div>
+                <div class="media-body response">
+                    <h3>В школі ви зможете не тільки підтянути рівень мови, але і добре підготуватись до ЗНО!</h3>
+                </div>
+            </div>
+        </div>
+        <br />
+        
+    </div>
+</section>
+<section id="file-section">
+    <div class="row wow hidden-xs hidden-sm">
+         <iframe src="~/pdf/programa_ukr_mova.pdf" class="pdf-file"></iframe>
+    </div>
+</section>
+
+<section id="services" class="service-item">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>Мовні клуби для підготовки до ЗНО</h2>
+            <p class="lead">Перешкоджайте мовні проблеми та удосконалюйте свої знання<br/> для підготовки до ЗНО в нашій школі!</p>
+        </div>
+
+        <div class="row wow fadeInDown">
+           @await Component.InvokeAsync("ClubTiles", null)
+        </div> 
+    </div> 
+</section> 

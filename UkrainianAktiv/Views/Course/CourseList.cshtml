@@ -1,0 +1,35 @@
+﻿@using UkrainianAktiv.ViewModels
+@using Microsoft.AspNetCore.Mvc.Rendering
+@model IList<CourseDto>
+@{
+    ViewBag.Title = "Курси для підготовки до ЗНО";
+    Layout = "_Layout";
+}
+
+<section class="pricing-page">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>Курси української мови для підготовки до ЗНО</h2>
+            <p class="lead">При відвідуванні курсів довідник для підготовки до ЗНО безкоштовно!</p>
+        </div>
+        <div class="center row">
+            <p>
+                Курс «Українська мова та література. Підготовка до ЗНО» покликаний допомогти всім охочим вступникам поглибити та закріпити набуті знання із шкільного курсу української мови та літератури.
+                <br/>Цей курс розрахований не на вивчення української мови та літератури як такої, а на допомогу вам саме у підготовці до ЗНО. Він містить необхідні для підготовки відомості, теми та матеріали.
+            </p>
+        </div>
+        <div class="center row">
+            <h2>Ми пропонуємо наступні курси:</h2>
+        </div>
+        <div class="pricing-area text-center">
+            <div class="row">
+                @for (var i = 0; i < Model.Count; i++)
+                {
+                    Model[i].ColumnClass = "col-md-3 course-item";
+                    @Html.Partial("CourseDetails", Model[i])
+                }
+            </div>
+        </div>
+    </div>
+</section>
+@Html.Partial("_BottomLinks")

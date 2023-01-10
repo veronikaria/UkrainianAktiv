@@ -1,0 +1,21 @@
+﻿@using System.Collections.Generic
+@using UkrainianAktiv.ViewModels
+
+@model IEnumerable<ClubDto>
+
+@foreach (var club in Model)
+{
+    <div class="col-sm-6">
+        <a asp-controller="@club.Controller" asp-action="@club.Action" asp-fragment="@club.Title">
+            <div class="media services-wrap wow fadeInDown">
+                <div class="pull-left">
+                    <i class="@club.IconClass"></i>
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">@club.Title</h3>
+                    <p>@club.Summary</p>
+                </div>
+            </div>
+        </a>
+    </div>
+}

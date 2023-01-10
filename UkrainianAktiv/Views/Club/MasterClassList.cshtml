@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@using UkrainianAktiv.ViewModels
+@model IEnumerable<ClubDto>
+@{
+    ViewBag.Title = "Майстер-класи";
+    Layout = "_Layout";
+}
+
+<section class="pricing-page">
+    <div class="container">
+        <div class="center wow fadeInDownfi">
+            <h2 name="Пробне ЗНО">Пробне ЗНО</h2>
+            <p class="lead">Ukrainian Aktiv представляє новий формат зустріч для організованого пробного ЗНО</p>
+        </div>
+        @foreach (var masterClass in Model)
+        {
+            @Html.Partial("MasterClassDetails", masterClass)
+        }
+    </div>
+</section>
+@Html.Partial("_BottomLinks")

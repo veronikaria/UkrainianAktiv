@@ -1,0 +1,27 @@
+﻿@using UkrainianAktiv.ViewModels
+@model CourseDto
+
+<div id="course" class="@Model.ColumnClass plan price-level-@Model.Level wow fadeInDown" 
+         onmouseover="changeCourseMainToDesc(@Model.Id)" onmouseout="changeCourseDescToMain(@Model.Id)">
+    <ul class="course-main-@Model.Id">
+        <li class="level-@Model.Level">
+            <h1>@Model.Title</h1>
+            <span>@Model.Price грн</span>
+        </li>
+        <li>@Html.Raw(Model.Day)</li>
+        <li>@Model.Time</li>
+        <li class="plan-action">
+            <a asp-controller="Home" asp-action="Contacts" class="btn btn-primary">Записатись</a>
+        </li>
+    </ul>
+    <ul class="course-desc-@Model.Id" style="display:none">
+        <li class="level-@Model.Level">
+            <h1>@Model.Title</h1>
+            <span>@Model.Price грн</span>
+        </li>
+        <li>@Model.Subtitle</li>
+        <li class="plan-action">
+            <a asp-controller="Home" asp-action="Contacts" class="btn btn-primary">Записатись</a>
+        </li>
+    </ul>
+</div>

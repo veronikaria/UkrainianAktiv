@@ -1,0 +1,22 @@
+﻿@using UkrainianAktiv.ViewModels
+@model ClubDto
+
+<div class="row club">
+    <div class="col-sm-12 wow fadeInDown">
+        <div class="col-md-4">
+            <img class="club-photo" src="@Model.ImageUrl"/>
+        </div>
+        <div class="club-title col-md-8">
+            <h1><a name="@Model.Title">@Model.Title</a></h1>
+            <span>@Model.Subtitle</span>
+            <div>
+                <a class="btn btn-sm btn-primary" asp-controller="Home" asp-action="Contacts">Записатись в клуб</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 wow fadeInDown">
+        <div class="club-content">
+            @Html.Raw(Model.Description)
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿@using System.Collections.Generic
+@using UkrainianAktiv.ViewModels
+@using Microsoft.AspNetCore.Mvc.Rendering
+@model IEnumerable<ScheduleItemDto>
+@{
+    ViewBag.Title = "Розклад зустрічей";
+    Layout = "_Layout";
+}
+
+<section id="schedule" class="service-item">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>Розклад зустрічей</h2>
+            <p class="lead">Обрати краще рішення для успішної здачі ЗНО</p>
+        </div>
+        @foreach (var scheduleItem in @Model)
+        {
+            @Html.Partial("ScheduleItemDetails", scheduleItem)
+        }
+    </div>
+</section>
+@Html.Partial("_BottomLinks")

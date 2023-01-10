@@ -1,0 +1,40 @@
+﻿@using System.Globalization
+@using UkrainianAktiv.ViewModels
+@model ScheduleItemDto
+
+<div class="row wow fadeInDown height-watch">
+    <div class="col-sm-12 col-md-2 action-date text-center">
+        <p>
+            @Model.Date.ToString("dd/MM/yyyy", new CultureInfo("ua-ua"))
+            <br/>
+            <br/>
+            <span class="action-price"><i>@Model.Price</i> грн</span>
+        </p>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <p>
+            <span class="action-title">
+                @Model.Title
+            </span>
+            <br/>
+            <small class="action-details">
+                @Model.Subtitle
+            </small>
+        </p>
+    </div>
+    <div class="col-sm-12 col-md-2">
+        <p>
+            <span class="action-teacher">@Model.Teacher</span>
+        </p>
+    </div>
+    <div class="col-sm-12 col-md-2">
+        <p>
+            <span class="action-day">@Model.Day</span><br/>
+            <span class="action-time">@Model.Time</span><br/>
+            <span class="action-place">@Model.Place</span>
+        </p>
+    </div>
+    <div class="col-sm-12 col-md-2 text-center action-submit">
+        <a asp-controller="Home" asp-action="Contacts" class="btn btn-primary btn-sm">Записатись</a>
+    </div>
+</div>

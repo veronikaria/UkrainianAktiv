@@ -1,0 +1,18 @@
+﻿@using UkrainianAktiv.ViewModels
+@model ClubDto
+<div class="row wow fadeInDown">
+    <div class="col-sm-4 column">
+        <img class="image-master" src="@Model.ImageUrl" alt="Майстер-клас">
+    </div>
+    <div class="col-sm-8 column">
+        @Html.Raw(Model.Description)
+    </div>
+</div>
+<div class="row wow fadeInDown">
+    <div class="col-sm-4 price-master text-center">
+        <h2>Вартість даної зустрічі - @Model.Price грн</h2>
+    </div>
+    <div class="col-sm-4">
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Contacts">Записатись на пробне ЗНО</a>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿@using UkrainianAktiv.ViewModels
+@model AccountDto
+
+@{
+    ViewBag.Title = "Увійти";
+    Layout = "_LayoutEmpty";
+}
+
+<div class="container">
+    <form class="form-signin" asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
+        <img class="logo center-block" src="~/img/logo2.png" alt="logo" asp-append-version="true">
+        <h2 class="form-signin-heading center">Вхід в систему</h2>
+        <label asp-for="UserName" class="sr-only"></label>
+        <input type="text" asp-for="UserName" class="form-control" placeholder="Введіть ім'я">
+        <label asp-for="Password" class="sr-only"></label>
+        <input type="password" asp-for="Password" class="form-control" placeholder="Введіть пароль">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Увійти</button>
+    </form>
+    <div class="center text-danger" asp-validation-summary="All"></div>
+</div>

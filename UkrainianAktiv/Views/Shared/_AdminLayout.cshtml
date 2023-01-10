@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Клуб підготовки до ЗНО Ukrainian Aktiv."/>
+    <meta name="keywords" content="українська мова, вивчення української, мовні клуби, клуб української мови, майстер-класи, українська мова для ЗНО, підготовка до ЗНО, граматика для ЗНО"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <title>@ViewData["Title"] - Ukrainian Aktiv</title>
+
+    <link rel="stylesheet" media="screen" href="~/css/bootstrap.min.css" asp-append-version="true">
+    <link rel="stylesheet" media="screen" href="~/css/font-awesome.min.css" asp-append-version="true">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" media="screen" href="~/css/animate.min.css" asp-append-version="true">
+    <link rel="stylesheet" media="screen" href="~/css/prettyPhoto.css" asp-append-version="true">
+    <link rel="stylesheet" media="screen" href="~/css/main.css" asp-append-version="true">
+    <link rel="stylesheet" media="screen" href="~/css/site.css" asp-append-version="true">
+    <link rel="stylesheet" media="screen" href="~/css/responsive.css" asp-append-version="true">
+</head>
+<body class="homepage">
+
+<header id="header">
+    <nav class="navbar navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                    <img class="logo" src="~/img/logo.png" alt="logo" asp-append-version="true">
+                    <img class="logo-sm" src="~/img/logo2.png" alt="logo" asp-append-version="true">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <menulink controller-name="Club" action-name="GetClubs" menu-text="Мовні клуби"></menulink>
+                    <menulink controller-name="Club" action-name="GetMasterClasses" menu-text="Майстер-класи"></menulink>
+                    <menulink controller-name="Course" action-name="GetCourses" menu-text="Курси"></menulink>
+                    <menulink controller-name="Schedule" action-name="GetSchedule" menu-text="Розклад"></menulink>
+                    <menulink controller-name="Home" action-name="About" menu-text="Про нас"></menulink>
+                    <menulink controller-name="Home" action-name="Contacts" menu-text="Контакти"></menulink>
+                </ul>
+            </div>
+        </div> 
+    </nav> 
+</header> 
+
+@RenderBody()
+
+<footer id="footer" class="midnight-blue">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                &copy; 2023 Ukrainian Aktiv. Всі права захищені.
+            </div>
+            <div class="col-sm-6">
+                <ul class="pull-right">
+                    <li><a asp-controller="Home" asp-action="Index">Головна</a></li>
+                    <li><a asp-controller="Home" asp-action="About">Про нас</a></li>
+                    <li><a asp-controller="Home" asp-action="Contacts">Контакти</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer> 
+
+<script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.prettyPhoto.js"></script>
+    <script src="~/js/jquery.isotope.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/wow.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
